@@ -1,4 +1,5 @@
 import asyncio
+import time
 from roblox import Client
 from roblox.utilities.exceptions import UserNotFound
 client = Client()
@@ -7,21 +8,23 @@ acc = []
 async def main():
     a=0
     i=3
-    idid = 12100000
+    idid = 12700000
     while i< 5:
         
         try:
             user = await client.get_user(idid)
-            print(user.name)
+            print(user.name + ":l0l0l0l")
             acc.append(user.name)
             if a == 100:
-                with open('readme.txt', 'w') as f:
-                    for line in acc:
-                        f.write('\n')
-                        f.write(line)
-                        f.write('\n')
-                acc.clear()
+                print("Above is the 100th acc after last generate")
+                time.sleep(1)
                 a = 0
+                ##with open('readme.txt', 'w') as f:
+                    ##for line in acc:
+                        ##f.write(line)
+                        ##f.write('\n')
+                ##acc.clear()
+                ##a = 0
         except UserNotFound:
             print("User not found")
         idid += 1
